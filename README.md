@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div align="center">
   <br />
     <a href="https://youtu.be/lie0cr3wESQ" target="_blank">
@@ -1071,3 +1072,7 @@ detailed explanations, cool features, and exercises to boost your skills. Give i
 </a>
 
 #
+=======
+# StoreIt
+A web application designed for secure file storage, sharing, and management. Features include file uploads, organized folders, easy access controls, and seamless user experience.
+>>>>>>> 129aa55c3020d56bb32627ceac624d66ec55543b
