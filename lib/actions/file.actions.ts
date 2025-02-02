@@ -94,13 +94,12 @@ export const getFiles = async ({
   types = [],
   searchText = "",
   sort = "$createdAt-desc",
-  limit,
+  limit = 200, // Default limit set to 200
 }: GetFilesProps) => {
   const { databases } = await createAdminClient();
 
   try {
     const currentUser = await getCurrentUser();
-
     if (!currentUser) throw new Error("User not found");
 
     const queries = createQueries(currentUser, types, searchText, sort, limit);
@@ -108,15 +107,14 @@ export const getFiles = async ({
     const files = await databases.listDocuments(
       appwriteConfig.databaseId,
       appwriteConfig.filesCollectionId,
-      queries,
+      queries
     );
-
-    console.log({ files });
     return parseStringify(files);
   } catch (error) {
     handleError(error, "Failed to get files");
   }
 };
+
 
 export const renameFile = async ({
   fileId,
